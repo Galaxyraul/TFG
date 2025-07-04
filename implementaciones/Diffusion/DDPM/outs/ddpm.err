@@ -1,0 +1,29 @@
+  0%|          | 0/6332 [00:00<?, ?it/s]  0%|          | 0/6332 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/rgt00024/.conda/envs/ddpm/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/rgt00024/.conda/envs/ddpm/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/raid/rgt00024/tfg/from_scratch/ddpm/DDPM-Pytorch-main/tools/train_ddpm.py", line 102, in <module>
+    train(args)
+  File "/raid/rgt00024/tfg/from_scratch/ddpm/DDPM-Pytorch-main/tools/train_ddpm.py", line 81, in train
+    noise_pred = model(noisy_im, t)
+  File "/home/rgt00024/.conda/envs/ddpm/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/raid/rgt00024/tfg/from_scratch/ddpm/DDPM-Pytorch-main/models/unet_base.py", line 350, in forward
+    out = down(out, t_emb)
+  File "/home/rgt00024/.conda/envs/ddpm/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/raid/rgt00024/tfg/from_scratch/ddpm/DDPM-Pytorch-main/models/unet_base.py", line 103, in forward
+    out_attn, _ = self.attentions[i](in_attn, in_attn, in_attn)
+  File "/home/rgt00024/.conda/envs/ddpm/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/rgt00024/.conda/envs/ddpm/lib/python3.8/site-packages/torch/nn/modules/activation.py", line 1038, in forward
+    attn_output, attn_output_weights = F.multi_head_attention_forward(
+  File "/home/rgt00024/.conda/envs/ddpm/lib/python3.8/site-packages/torch/nn/functional.py", line 5358, in multi_head_attention_forward
+    attn_output, attn_output_weights = _scaled_dot_product_attention(q, k, v, attn_mask, dropout_p)
+  File "/home/rgt00024/.conda/envs/ddpm/lib/python3.8/site-packages/torch/nn/functional.py", line 5037, in _scaled_dot_product_attention
+    attn = softmax(attn, dim=-1)
+  File "/home/rgt00024/.conda/envs/ddpm/lib/python3.8/site-packages/torch/nn/functional.py", line 1818, in softmax
+    ret = input.softmax(dim)
+RuntimeError: CUDA out of memory. Tried to allocate 8.00 GiB (GPU 0; 31.73 GiB total capacity; 18.46 GiB already allocated; 6.29 GiB free; 24.24 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF

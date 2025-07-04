@@ -1,0 +1,3 @@
+Link to checkpoint:
+
+https://huggingface.co/UT-Austin-PML/BetaDiffusion/resolve/main/checkpoint_Beta_KLUB_B288/network-snapshot-200000.pkl
